@@ -1,0 +1,1 @@
+this is the "essentials" discord bot made May 2019
