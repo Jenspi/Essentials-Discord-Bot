@@ -1,6 +1,7 @@
-import net.dv8tion.jda.core.entities.*;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 //our event listener extends a class within the java discord api
 public class CommandHandler extends ListenerAdapter
@@ -15,11 +16,13 @@ public class CommandHandler extends ListenerAdapter
 		String content = message.getContentRaw();
 		content = content.toLowerCase();
 		//be able to respond in the same channel that message was received in
+		@SuppressWarnings("unused")
 		MessageChannel channel = event.getChannel();
 		
+		//commands:
 		if(content.equals("!ping"))
 		{
-			//create ping object
+			//create objects from our respective classes to be able to execute commands
 			new Ping(event);
 		}
 			else if(content.equals("!help"))
@@ -27,14 +30,15 @@ public class CommandHandler extends ListenerAdapter
 				new Help(event);
 			}
 			
-			else if(content.equals("!age"))
-			{
-				new Age(event);
-			}
-			else if(content.equals("!sage"))
-			{
-				new ServerAge(event);
-			}
+			//DEPRECATED
+			//else if(content.equals("!age"))
+			//{
+			//	new Age(event);
+			//}
+			//else if(content.equals("!sage"))
+			//{
+			//	new ServerAge(event);
+			//}
 			else if(content.equals("!roles"))
 			{
 				new Roles(event);
