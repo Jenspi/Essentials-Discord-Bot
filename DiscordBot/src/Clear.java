@@ -1,9 +1,7 @@
 import java.util.List;
-
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.core.requests.RestAction;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.requests.RestAction;
 
 public class Clear extends ModuleBase {
 
@@ -22,7 +20,9 @@ public class Clear extends ModuleBase {
 		
 	}//end process method
 	
-	public void onGuildMessageReceived(GuildMessageReceivedEvent event)
+	@SuppressWarnings("unchecked")
+	//public void onGuildMessageReceived(GuildMessageReceivedEvent event)
+	public void onGuildMessageReceived(MessageReceivedEvent event)
 	{
 		//"\\s+" counts all spaces as single break
 		String[] args = command.toLowerCase().split(" ");
