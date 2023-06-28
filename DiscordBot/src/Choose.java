@@ -1,6 +1,6 @@
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class Choose extends ModuleBase {
 
@@ -26,7 +26,7 @@ public class Choose extends ModuleBase {
 			embedBuilder.setDescription(options[(int) Math.floor(Math.random()*options.length)]);
 			embedBuilder.setColor(0x88C1B1);
 			
-			channel.sendMessage(embedBuilder.build()).queue();
+			channel.sendMessageEmbeds(embedBuilder.build()).queue();
 			embedBuilder.clear();
 			channel.sendMessage( options[(int) Math.floor(Math.random()*options.length)] ).queue();
 		}
