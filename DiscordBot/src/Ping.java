@@ -1,6 +1,6 @@
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.User;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class Ping extends ModuleBase {
 
@@ -12,17 +12,16 @@ public class Ping extends ModuleBase {
 	@Override
 	public void process() {
 		channel.sendTyping().queue();
-		//channel.sendMessage("Pong! Here's your ping: " + event.getJDA().getPing()).queue();
 		
 		User user = event.getMember().getUser();
 		
 		//################// EMBED BUILDER //################//
 		EmbedBuilder embed = new EmbedBuilder();
 		embed.setTitle("**Pong!**");
-		embed.setDescription(user.getAsMention()+"'s ping is "+event.getJDA().getPing());
+		embed.setDescription(user.getAsMention()+"'s ping is "+event.getJDA().getGatewayPing());
 		embed.setColor(0x88C1B1);
 		
-		channel.sendMessage(embed.build()).queue();
+		channel.sendMessageEmbeds(embed.build()).queue();
 		embed.clear();
 	}
 
