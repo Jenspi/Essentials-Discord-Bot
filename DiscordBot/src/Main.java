@@ -1,26 +1,28 @@
-import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.OnlineStatus;
-import net.dv8tion.jda.core.entities.Game;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Main
 {
+	private static final String TOKEN = "NTY1NDI1MzcyMjI5Nzk1ODUw.XK2Whw.uFPEMaguJeszxnNcV5jVfQG6PoU";
+	
 	public static void main(String[] args) throws Exception
 	{
-		JDA api = new JDABuilder(AccountType.BOT).setToken("NTY1NDI1MzcyMjI5Nzk1ODUw.XK2Whw.uFPEMaguJeszxnNcV5jVfQG6PoU").build();
+		//explicitly allow access to message content with .enableIntents()
+		JDA jda = JDABuilder.createDefault(TOKEN).enableIntents(GatewayIntent.MESSAGE_CONTENT).build();
+		
 		try {
-		//JDA api = new JDABuilder(AccountType.BOT).setToken("NTY1NDI1MzcyMjI5Nzk1ODUw.XK2Whw.uFPEMaguJeszxnNcV5jVfQG6PoU").build();
-		//add event listener for bot to detect events happening (users join or message)
-		api.addEventListener(new CommandHandler());
+			//add event listener for bot to detect events happening (users join or message)
+			jda.addEventListener(new CommandHandler());
 		}
 		catch (Exception e){
 			e.printStackTrace();
 		}
-		api.getPresence().setStatus(OnlineStatus.ONLINE);
-		api.getPresence().setGame(Game.watching("Top 10 rappers Eminem was too afraid to diss"));
 		
-		//api.addEventListener(new Clear());
+		//jda.getPresence().setStatus(OnlineStatus.ONLINE);
+		jda.getPresence().setActivity(Activity.watching("Top 10 rappers Eminem was too afraid to diss"));
+		//api.addEventListener(new Clear()); //? what is this lol
 		
 	}//end main
 }//end class
