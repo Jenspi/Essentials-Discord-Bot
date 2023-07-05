@@ -12,14 +12,13 @@ public class Choose extends ModuleBase {
 	public void process() {
 		Message input = event.getMessage();
 		String content = input.getContentRaw();
-		String isThisValid = content.toLowerCase();
+		//String isThisValid = content.toLowerCase();
 		
-		if(!isThisValid.equals("!choose")){
+		if(!content.toLowerCase().equals("!choose")){
 			channel.sendTyping().queue();
 			String message = content.replace("!choose ", "");
-			String[] options = message.split("||");
+			String[] options = message.split("\\?");
 			
-			//FIX:
 			//################// EMBED BUILDER //################//
 			EmbedBuilder embedBuilder = new EmbedBuilder();
 			embedBuilder.setTitle("**!choose:**");
@@ -28,10 +27,10 @@ public class Choose extends ModuleBase {
 			
 			channel.sendMessageEmbeds(embedBuilder.build()).queue();
 			embedBuilder.clear();
-			channel.sendMessage( options[(int) Math.floor(Math.random()*options.length)] ).queue();
+			//channel.sendMessage( options[(int) Math.floor(Math.random()*options.length)] ).queue();
+			
 		}
-			else if(content.equals("!choose"))
-			{
+			else if(content.equals("!choose")) {
 				channel.sendMessage("You didn't give me two or more choices to choose from! Try this:\n*`!choose <option 1> & <option 2>`*").queue();
 			}
 	}
