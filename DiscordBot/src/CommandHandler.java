@@ -25,31 +25,31 @@ public class CommandHandler extends ListenerAdapter
 			//create objects from our respective classes to be able to execute commands
 			new Ping(event);
 		}
-			else if(content.equals("!help"))
-			{
-				new Help(event);
-			}
-			
-			//DEPRECATED
-			//else if(content.equals("!age"))
-			//{
-			//	new Age(event);
-			//}
-			//else if(content.equals("!sage"))
-			//{
-			//	new ServerAge(event);
-			//}
-			else if(content.equals("!roles"))
-			{
-				new Roles(event);
-			}
-			else if(content.startsWith("!clear!"))
-			{
-				new Clear(event);
-			}
-			else if(content.startsWith("!choose"))
-			{
-				new Choose(event);
-			}
+		else if(content.equals("!help"))
+		{
+			new Help(event);
+		}
+		
+		//DEPRECATED
+		//else if(content.equals("!age"))
+		//{
+		//	new Age(event);
+		//}
+		//else if(content.equals("!sage"))
+		//{
+		//	new ServerAge(event);
+		//}
+		else if(content.equals("!roles"))
+		{
+			new Roles(event);
+		}
+		else if(content.startsWith("!clear"))
+		{
+			new Clear(event);
+		}
+		else if(content.startsWith("!choose"))
+		{
+			new Choose(event);
+		}
 	}
 }
