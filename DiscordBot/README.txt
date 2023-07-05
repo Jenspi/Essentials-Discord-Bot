@@ -51,5 +51,32 @@ Patch notes:
 		8. Figure out what I was going to do with Art and Draw classes
 		9. Fix !choose
 		10. Fix !clear
-	
+
+
+
+6/29/23:
+	CHANGES– !clear now works.
+	//TODO
+		1. Update missing image on !help image
+
+
+
+6/30/23:
+	CHANGES– ADDED !clear edge cases and their error messages; FIXED !clear embed; REMOVED and organized testing/debugging code; 
+	QUESTIONS–
+		1. Is it possible to do clear all?
+		2. Can I add an admin only option for !clear command?
+		3. Should I include "created by Jenspi" on every single embed or just on !help?
+	//TODO
+		1. Fix embeds for !clear, !clear edge cases, !choose edge cases, !choose output.
+		2. Add embed for !clear output
+		3. Save color palette somewhere
+		4. Change !choose separator from ||
+		5. Replace if/elses with switch cases
+
+
+
+7/1/23:
+	CHANGES– ADDED !clear command info to !help; FIXED !choose logic; CHANGED !choose separator from || to ?.
+
 ⋆ ˚。⋆୨୧˚ ˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆
