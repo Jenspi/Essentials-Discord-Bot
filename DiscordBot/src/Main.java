@@ -1,3 +1,6 @@
+import java.io.File;
+import java.util.Scanner;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -5,10 +8,25 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Main
 {
-	private static final String TOKEN = "NTY1NDI1MzcyMjI5Nzk1ODUw.XK2Whw.uFPEMaguJeszxnNcV5jVfQG6PoU";
-	
-	public static void main(String[] args) throws Exception
-	{
+	//private static final String TOKEN = "<token here>";
+	private static final String TOKEN="";
+	public static void main(String[] args) throws Exception{
+		
+		//Get token:
+		try {
+	        File input = new File("../../keys.txt");
+	        Scanner tokenFile = new Scanner(input);
+	        if(tokenFile.hasNextLine()){
+	            TOKEN = tokenFile.nextLine();
+	            tokenFile.close();
+	        }
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+        // ############################################################################################### //
+		
 		//explicitly allow access to message content with .enableIntents()
 		JDA jda = JDABuilder.createDefault(TOKEN).enableIntents(GatewayIntent.MESSAGE_CONTENT).build();
 		
