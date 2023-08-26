@@ -79,4 +79,9 @@ Patch notes:
 7/1/23:
 	CHANGES– ADDED !clear command info to !help; FIXED !choose logic; CHANGED !choose separator from || to ?.
 
+
+
+8/25/23:
+	CHANGES– Finally found out how to hide my token.
+
 ⋆ ˚。⋆୨୧˚ ˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆⋆ ˚。⋆୨୧˚　˚୨୧⋆。˚ ⋆
